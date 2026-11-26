@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Investment Portfolio | Sample Dashboard</title>
+<style>
+:root{--navy:#092b5a;--blue:#1456a0;--ink:#172334;--muted:#66758a;--line:#dce3eb;--green:#16834a;--red:#c62828;--bg:#f4f7fb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Arial,Helvetica,sans-serif}
+header{background:#fff;padding:20px 4%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.brand{font-size:24px;font-weight:800;letter-spacing:3px;color:var(--navy)}.brand small{display:block;font-size:9px;letter-spacing:1px}
+nav{color:var(--navy);font-weight:600}.banner{background:var(--navy);color:white;padding:20px 4%;display:flex;justify-content:space-between;align-items:center}.banner h1{margin:0;font-size:25px}.tag{font-size:12px;letter-spacing:1px;border:1px solid #7892b2;padding:7px 10px;border-radius:4px}
+.tabs{background:white;padding:15px 4%;display:flex;gap:28px;overflow:auto;border-bottom:1px solid var(--line);white-space:nowrap}.tabs b{color:var(--blue);border-bottom:3px solid var(--blue);padding-bottom:14px}
+main{max-width:1450px;margin:25px auto;padding:0 22px}.card{background:white;border:1px solid var(--line);border-radius:10px;padding:23px;margin-bottom:20px;box-shadow:0 2px 8px #102b4a08}
+.summary{display:grid;grid-template-columns:1fr .8fr 1.2fr;gap:25px;align-items:center}.muted{color:var(--muted);font-size:14px}.value{font-size:clamp(38px,5vw,58px);font-weight:700;letter-spacing:-2px;margin:8px 0}.red{color:var(--red);font-weight:700}.green{color:var(--green);font-weight:700}.metric{border-left:1px solid var(--line);padding-left:25px}.metric strong{display:block;font-size:25px;margin:7px 0 18px}
+.chart{width:100%;height:140px}.chart svg{width:100%;height:100%}.columns{display:grid;grid-template-columns:.9fr 1.5fr;gap:20px}h2{color:var(--navy);font-size:21px;margin:0 0 18px}
+.allocation{display:flex;align-items:center;gap:24px;flex-wrap:wrap}.donut{width:175px;height:175px;border-radius:50%;background:conic-gradient(#2466b2 0 50%,#259b78 50% 65%,#f0a33a 65% 75%,#8067b8 75% 100%);position:relative;flex:none}.donut:after{content:"$20,000";position:absolute;inset:34px;background:white;border-radius:50%;display:grid;place-items:center;font-size:20px;font-weight:bold}.legend{flex:1;min-width:140px}.legend div{display:flex;justify-content:space-between;margin:12px 0}.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px}
+.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th,td{padding:11px 9px;border-bottom:1px solid #e8edf3;text-align:left}th{font-size:12px;color:var(--muted)}td:last-child,th:last-child{text-align:right}.ticker{color:var(--blue);font-weight:700}
+.disclaimer{background:#edf2f8;border:1px solid #d5dfeb;padding:14px;border-radius:8px;color:#53657b;font-size:12px;margin:18px 0 30px}
+@media(max-width:850px){.summary{grid-template-columns:1fr 1fr}.chartbox{grid-column:1/-1}.columns{grid-template-columns:1fr}nav{display:none}}
+@media(max-width:550px){main{padding:0 12px}.summary{grid-template-columns:1fr}.metric{border-left:0;border-top:1px solid var(--line);padding:15px 0 0}.card{padding:17px}.banner h1{font-size:19px}}
+</style>
+</head>
+<body>
+<header><div class="brand">MERRILL<small>A BANK OF AMERICA COMPANY</small></div><nav>Accounts　 Trade　 Research　 Planning &amp; Advice</nav></header>
+<div class="banner"><h1>Investment Accounts</h1><span class="tag">SAMPLE PORTFOLIO</span></div>
+<div class="tabs"><b>Summary</b><span>Positions</span><span>Performance</span><span>Asset Allocation</span><span>Activity</span></div>
+<main>
+<section class="card summary">
+<div><div class="muted">Portfolio Value</div><div class="value">$19,842.17</div><div class="red">−$157.83 (−0.79%)</div><p class="muted">Illustrative total return vs. $20,000 starting investment</p></div>
+<div class="metric"><div class="muted">Initial Investment</div><strong>$20,000.00</strong><div class="muted">Unrealized Gain/Loss</div><strong class="red">−$157.83 (−0.79%)</strong></div>
+<div class="chartbox"><div class="muted">Illustrative Portfolio Trend</div><div class="chart"><svg viewBox="0 0 500 140" preserveAspectRatio="none" aria-label="Illustrative portfolio trend"><defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3b82d0" stop-opacity=".25"/><stop offset="1" stop-color="#3b82d0" stop-opacity="0"/></linearGradient></defs><path d="M0 70 L35 53 L70 72 L105 36 L140 49 L175 30 L210 52 L245 40 L280 54 L315 32 L350 68 L385 61 L420 88 L455 80 L500 110 L500 140 L0 140Z" fill="url(#fill)"/><path d="M0 70 L35 53 L70 72 L105 36 L140 49 L175 30 L210 52 L245 40 L280 54 L315 32 L350 68 L385 61 L420 88 L455 80 L500 110" fill="none" stroke="#1456a0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="muted">Sample trend — not live market data</div></div>
+</section>
+<section class="columns">
+<article class="card"><h2>Portfolio Allocation</h2><div class="allocation"><div class="donut"></div><div class="legend"><div><span><i class="dot" style="background:#2466b2"></i>VOO</span><b>50%</b></div><div><span><i class="dot" style="background:#259b78"></i>VXUS</span><b>15%</b></div><div><span><i class="dot" style="background:#f0a33a"></i>SCHD</span><b>10%</b></div><div><span><i class="dot" style="background:#8067b8"></i>Individual stocks</span><b>25%</b></div></div></div></article>
+<article class="card"><h2>Performance Breakdown</h2><div class="tablewrap"><table><thead><tr><th>Holding</th><th>Gain / Loss</th><th>Return</th></tr></thead><tbody>
+<tr><td>VOO</td><td class="green">+$50.00</td><td class="green">+0.50%</td></tr>
+<tr><td>VXUS</td><td class="red">−$90.00</td><td class="red">−3.00%</td></tr>
+<tr><td>SCHD</td><td class="green">+$40.00</td><td class="green">+2.00%</td></tr>
+<tr><td>MSFT</td><td class="red">−$30.00</td><td class="red">−3.00%</td></tr>
+<tr><td>NVDA</td><td class="red">−$50.00</td><td class="red">−5.00%</td></tr>
+<tr><td>AMZN</td><td class="green">+$25.00</td><td class="green">+2.50%</td></tr>
+<tr><td>GOOGL</td><td class="red">−$15.00</td><td class="red">−1.50%</td></tr>
+<tr><td>BRK.B</td><td class="red">−$87.83</td><td class="red">−8.78%</td></tr>
+</tbody></table></div></article>
+</section>
+<section class="card"><h2>Holdings Summary</h2><div class="tablewrap"><table><thead><tr><th>Symbol</th><th>Investment</th><th>Cost Basis</th><th>Market Value</th><th>Gain / Loss</th></tr></thead><tbody>
+<tr><td class="ticker">VOO</td><td>Vanguard S&amp;P 500 ETF</td><td>$10,000.00</td><td>$10,050.00</td><td class="green">+$50.00</td></tr>
+<tr><td class="ticker">VXUS</td><td>Vanguard Total International ETF</td><td>$3,000.00</td><td>$2,910.00</td><td class="red">−$90.00</td></tr>
+<tr><td class="ticker">SCHD</td><td>Schwab U.S. Dividend ETF</td><td>$2,000.00</td><td>$2,040.00</td><td class="green">+$40.00</td></tr>
+<tr><td class="ticker">MSFT</td><td>Microsoft</td><td>$1,000.00</td><td>$970.00</td><td class="red">−$30.00</td></tr>
+<tr><td class="ticker">NVDA</td><td>NVIDIA</td><td>$1,000.00</td><td>$950.00</td><td class="red">−$50.00</td></tr>
+<tr><td class="ticker">AMZN</td><td>Amazon</td><td>$1,000.00</td><td>$1,025.00</td><td class="green">+$25.00</td></tr>
+<tr><td class="ticker">GOOGL</td><td>Alphabet</td><td>$1,000.00</td><td>$985.00</td><td class="red">−$15.00</td></tr>
+<tr><td class="ticker">BRK.B</td><td>Berkshire Hathaway</td><td>$1,000.00</td><td>$912.17</td><td class="red">−$87.83</td></tr>
+<tr><td colspan="2"><b>Total</b></td><td><b>$20,000.00</b></td><td><b>$19,842.17</b></td><td class="red"><b>−$157.83</b></td></tr>
+</tbody></table></div></section>
+<div class="disclaimer"><b>Important:</b> This is a fictional portfolio mockup for presentation purposes only. Holdings, balances, performance figures, and charts are illustrative, not live market data or actual account activity. This independent design is not affiliated with or endorsed by Merrill or Bank of America.</div>
+</main>
+</body></html>
